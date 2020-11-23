@@ -1,4 +1,4 @@
-require 'Date'
+require 'date'
 
 class BloodOath
 
@@ -22,14 +22,5 @@ class BloodOath
     def self.first_oath
         self.all.min_by{|oath| Date.parse(oath.initiation_date)}.follower
     end
-
-
-
-
-
-
-
-
-
 
 end

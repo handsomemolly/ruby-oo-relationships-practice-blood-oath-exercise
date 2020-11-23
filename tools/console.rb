@@ -11,6 +11,7 @@ cult1 = Cult.new('Cult 1', 2001, 'crush your enemies', 'florida')
 cult2 = Cult.new('Cult 2', 2002, 'crush your enemies again', 'key west')
 cult3 = Cult.new('Cult 3', 2003, 'crush your enemies thrice', 'miami')
 cult4 = Cult.new('Cult 4', 2004, 'crush your enemies thrice again', 'miami')
+cult5 = Cult.new('Cult 5', 2005, 'more clothes less fun', 'utah', 16)
 
 follower1 = Follower.new('Carl', 21, 'yolo')
 follower2 = Follower.new('Stanley', 22, 'I love friendship')

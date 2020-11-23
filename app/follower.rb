@@ -24,7 +24,11 @@ class Follower
     end
 
     def join_cult(cult, date)
-        BloodOath.new(cult, self, date)
+        # if self.age < cult.minimum_age
+        #     "sucks to suck"
+        # else
+            BloodOath.new(cult, self, date)
+        # end    
     end
 
     def self.of_a_certain_age(age)
@@ -43,12 +47,16 @@ class Follower
         self.most_actives(1)
     end
 
-
     def self.top_ten
         self.most_actives(10)
     end
 
-  
+    def fellow_cult_members
+        full_cult = cults.map do |cult| 
+            cult.blood_oaths.select{|blood_oath| blood_oath.follower != self}
+        end
+        full_cult.flatten.uniq.map{|blood_oath|blood_oath.follower.name}
+    end
 
 
 

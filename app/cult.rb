@@ -1,14 +1,16 @@
 class Cult
-    attr_accessor :name
+    attr_accessor :name, :minimum_age
     attr_reader :founding_year, :slogan, :location
 
     @@all = []
+    @minimum_age = 18
 
-    def initialize(name, founding_year, slogan, location)
+    def initialize(name, founding_year, slogan, location, minimum_age = 18)
         @name = name
         @founding_year = founding_year
         @slogan = slogan
         @location = location
+        @minimum_age = minimum_age
         @@all << self
     end
 
@@ -17,7 +19,11 @@ class Cult
     end
 
     def recruit_follower(follower, date)
-        BloodOath.new(self, follower, date)
+        # if follower.age < self.minimum_age
+        #     "sucks to suck"
+        # else
+            BloodOath.new(self, follower, date)
+        # end
     end
 
     def blood_oaths
@@ -65,7 +71,9 @@ class Cult
         location_hash.max_by{|k, v| v}.first
     end
 
+    def minimum_age
 
+    end
 
 
 
